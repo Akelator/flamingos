@@ -51,6 +51,7 @@ export class AppComponent implements AfterViewInit {
     ];
     const store: string | null = window.localStorage.getItem('selected');
     if (!!store) this.selected = parseInt(store);
+    else this.selected = 0;
     this.cdr.detectChanges();
   }
 
