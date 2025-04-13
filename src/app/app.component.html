@@ -26,6 +26,8 @@
     <div class="start">IN</div>
     <div class="end">OUT</div>
     <div class="perc">DUR</div>
+    <div class="no-l"></div>
+
   </div>
 
   <ng-container *ngFor="let cut of block">
@@ -75,14 +77,14 @@
       </div>
       <div class="start">{{ cut.start }}</div>
       <div class="end">{{ cut.end || "transición"}}</div>
-
-
       <div class="perc">
         {{cut.duration}}
         <div class="dur-cont">
           <div class="dur-bar"
                [style.width]="cut.perc  + '%'"></div>
         </div>
+      </div>
+      <div class="no-l">
       </div>
     </div>
   </ng-container>

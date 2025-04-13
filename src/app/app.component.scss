@@ -5,11 +5,11 @@
   --time: 110px;
   --perc: 300px;
   --no-l: 70px;
-  margin: 0px 0px 50px 0px
+  margin: 0px 0px 50px 0px;
+  width: 980px;
 }
 
 .cut {
-
   display: flex;
   width: 980px;
   background-color: #303030;
@@ -57,10 +57,14 @@
   .bpm,
   .perc,
   .no-l {
-    padding: 8px 14px;
+    padding: 8px 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .info {
+    padding: 8px 16px;
   }
 
   .end {
@@ -69,6 +73,8 @@
 
   .info {
     width: calc((100% - (var(--time) * 2 + var(--perc) + var(--no-l))) * 0.6);
+    min-width: calc((100% - (var(--time) * 2 + var(--perc) + var(--no-l))) * 0.6);
+    max-width: calc((100% - (var(--time) * 2 + var(--perc) + var(--no-l))) * 0.6);
 
     span {
       overflow: hidden;
@@ -82,6 +88,8 @@
     font-size: 20px;
     font-weight: 900;
     width: calc((100% - (var(--time) * 2 + var(--perc))) * 0.4);
+    min-width: calc((100% - (var(--time) * 2 + var(--perc))) * 0.4);
+    max-width: calc((100% - (var(--time) * 2 + var(--perc))) * 0.4);
 
     // justify-content: flex-start;
     span {
@@ -136,7 +144,7 @@ b {
 
     &.perc {
       justify-content: flex-start;
-      padding-left: 14px !important;
+      padding-left: 12px !important;
     }
   }
 }
@@ -155,26 +163,34 @@ b {
 
 .no-l {
   transform: scaleX(-1);
+  width: 65px;
+  min-width: 65px;
+  max-width: 65px;
 }
 
 .menu {
   display: flex;
   width: 100%;
-  padding-left: 70px;
+  padding-left: 65px;
+  padding-right: 65px;
   margin-top: 20px;
   margin-bottom: 50px;
 
   .menu-btn {
     background-color: #133a28;
-
-    padding: 12px 24px;
+    padding: 12px 0px;
     font-size: 20px;
     font-weight: 900;
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+
     cursor: pointer;
     color: #189e5f;
+    flex-grow: 1;
 
-
+    &:not(:last-of-type) {
+      margin-right: 14px;
+    }
 
     &.selected {
       background-color: #189e5f;
