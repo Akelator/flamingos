@@ -16,7 +16,7 @@
   border-bottom: 2px solid black;
 
   &:not(.trans):not(.head) {
-    min-height: 70px;
+    min-height: 54px;
   }
 
   * {
@@ -92,14 +92,16 @@
 
   .start,
   .bpm {
-    border-right-width: 2px;
-    border-right-style: solid;
+
     white-space: nowrap;
   }
 
-  .end {
-    border-left-width: 2px;
-    border-left-style: solid;
+  .info,
+  .start,
+  .bpm {
+    border-right-width: 2px;
+    border-right-style: solid;
+
   }
 
   .perc {
@@ -164,6 +166,7 @@ b {
 
   .menu-btn {
     background-color: #133a28;
+
     padding: 12px 24px;
     font-size: 20px;
     font-weight: 900;
@@ -171,9 +174,25 @@ b {
     cursor: pointer;
     color: #189e5f;
 
+
+
     &.selected {
       background-color: #189e5f;
       color: white;
     }
+
+    &.yy {
+      background-color: #393a13;
+      color: #8a9e18;
+
+      &.selected {
+        background-color: #8a9e18;
+        color: white;
+      }
+    }
   }
+}
+
+.info.trans {
+  background-color: black !important;
 }

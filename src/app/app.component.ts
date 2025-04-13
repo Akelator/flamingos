@@ -2,8 +2,12 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
 import { b1 } from './data/disco_b1';
-import { CUT } from './data/model';
 import { b2 } from './data/disco_b2';
+import { b3 } from './data/disco_b3';
+import { CUT } from './data/model';
+import { y1 } from './data/yeye_b1';
+import { y2 } from './data/yeye_b2';
+import { y3 } from './data/yeye_b3';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +21,13 @@ export class AppComponent implements AfterViewInit {
   block1: CUT[] = [];
   block2: CUT[] = [];
   block3: CUT[] = [];
+  yeye1: CUT[] = [];
+  yeye2: CUT[] = [];
+  yeye3: CUT[] = [];
 
   blocks: CUT[][] = [];
 
-  selected: number = 0;
+  selected: number = -1;
   constructor(private cdr: ChangeDetectorRef) {}
 
   get block(): CUT[] {
@@ -30,14 +37,26 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.block1 = this.createBlock(b1);
     this.block2 = this.createBlock(b2);
-    this.block3 = this.createBlock(b2);
-    this.blocks = [this.block1, this.block2, this.block3];
+    this.block3 = this.createBlock(b3);
+    this.yeye1 = this.createBlock(y1);
+    this.yeye2 = this.createBlock(y2);
+    this.yeye3 = this.createBlock(y3);
+    this.blocks = [
+      this.block1,
+      this.block2,
+      this.block3,
+      this.yeye1,
+      this.yeye2,
+      this.yeye3,
+    ];
+    const store: string | null = window.localStorage.getItem('selected');
+    if (!!store) this.selected = parseInt(store);
     this.cdr.detectChanges();
   }
 
   select(b: number): void {
     this.selected = b;
-    console.log(b);
+    window.localStorage.setItem('selected', b.toString());
   }
 
   c(cut: CUT): string {

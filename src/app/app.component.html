@@ -1,4 +1,4 @@
-<ng-container *ngIf="!!blocks?.length">
+<ng-container *ngIf="selected >= 0 && !!blocks?.length">
   <div class="menu">
     <div class="menu-btn"
          [class.selected]="selected == 0"
@@ -9,14 +9,23 @@
     <div class="menu-btn"
          [class.selected]="selected == 2"
          (click)="select(2)">DISCO 3</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 3"
+         (click)="select(3)">YEYE 1</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 4"
+         (click)="select(4)">YEYE 2</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 5"
+         (click)="select(5)">YEYE 3</div>
   </div>
   <div class="cut head">
     <div class="no-l"></div>
-    <div class="start">IN</div>
+    <div class="info">SONG</div>
     <div class="bpm">BPM</div>
-    <div class="info">TITLE</div>
+    <div class="start">IN</div>
     <div class="end">OUT</div>
-    <div class="perc">DURATON</div>
+    <div class="perc">DUR</div>
   </div>
 
   <ng-container *ngFor="let cut of block">
@@ -56,15 +65,18 @@
           </svg>
         </div>
       </div>
-      <div class="start">{{ cut.start }}</div>
+      <div class="info"
+           [class.trans]="!cut.song"><span>{{ cut.song }}</span></div>
       <div class="bpm">
         <ng-container *ngIf="!!cut.song || !cut.change">{{ cut.bpm?.start || "???" }}</ng-container>
         <ng-container *ngIf="!cut.song && cut.change">
           {{ cut.bpm?.start || "???" }}<span>&nbsp;{{ c(cut) }}&nbsp;</span>{{ cut.bpm?.end || "???" }}
         </ng-container>
       </div>
-      <div class="info"><span>{{ cut.song }}</span></div>
+      <div class="start">{{ cut.start }}</div>
       <div class="end">{{ cut.end || "transición"}}</div>
+
+
       <div class="perc">
         {{cut.duration}}
         <div class="dur-cont">
