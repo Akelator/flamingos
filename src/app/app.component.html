@@ -1,0 +1,77 @@
+<ng-container *ngIf="!!blocks?.length">
+  <div class="menu">
+    <div class="menu-btn"
+         [class.selected]="selected == 0"
+         (click)="select(0)">DISCO 1</div>
+    <div class="menu-btn"
+         [class.selected]="selected == 1"
+         (click)="select(1)">DISCO 2</div>
+    <div class="menu-btn"
+         [class.selected]="selected == 2"
+         (click)="select(2)">DISCO 3</div>
+  </div>
+  <div class="cut head">
+    <div class="no-l"></div>
+    <div class="start">IN</div>
+    <div class="bpm">BPM</div>
+    <div class="info">TITLE</div>
+    <div class="end">OUT</div>
+    <div class="perc">DURATON</div>
+  </div>
+
+  <ng-container *ngFor="let cut of block">
+
+    <div class="cut"
+         [class.trans]="!cut.song"
+         [class.change]="cut.change">
+      <div class="no-l">
+        <div *ngIf="cut.black"
+             class="icon">
+          <svg width="30px"
+               height="30px"
+               viewBox="0 0 24 24"
+               fill="#FFFF00"
+               stroke="#FFFF00"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18H15"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M10 21H14"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M16.4999 11.5C17.4997 10.5 17.9765 9.48689 17.9999 8C18.0479 4.95029 16 3 11.9999 3C10.8324 3 9.83119 3.16613 8.99988 3.47724"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M8.99985 15C9 13 8.5 12.5 7.49985 11.5C6.4997 10.5 6.02324 9.48689 5.99985 8C5.99142 7.46458 6.0476 6.96304 6.1676 6.5"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M3 3L21 21"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="start">{{ cut.start }}</div>
+      <div class="bpm">
+        <ng-container *ngIf="!!cut.song || !cut.change">{{ cut.bpm?.start || "???" }}</ng-container>
+        <ng-container *ngIf="!cut.song && cut.change">
+          {{ cut.bpm?.start || "???" }}<span>&nbsp;{{ c(cut) }}&nbsp;</span>{{ cut.bpm?.end || "???" }}
+        </ng-container>
+      </div>
+      <div class="info"><span>{{ cut.song }}</span></div>
+      <div class="end">{{ cut.end || "transición"}}</div>
+      <div class="perc">
+        {{cut.duration}}
+        <div class="dur-cont">
+          <div class="dur-bar"
+               [style.width]="cut.perc  + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
