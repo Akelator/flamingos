@@ -1,0 +1,27 @@
+import { CUT } from './model';
+
+export const YEYE_2: CUT[] = [
+  { T: '00:00:00', song: 'Quisiera Ser', tempo: 90 },
+  { T: '01:22:88' },
+  { T: '01:35:89', song: 'La Fiesta De Blas', tempo: 96 },
+  { T: '02:35:57' },
+  { T: '02:47:99', song: 'Porque Te Vas', tempo: 96 },
+  { T: '04:02:89' },
+  { T: '04:25:47', song: 'Resistire', tempo: 96 },
+  { T: '05:45:47' },
+  { T: '06:04:24', song: 'Un Beso Y Una Flor', tempo: 96 },
+  { T: '06:47:95' },
+  { T: '07:07:92', song: 'Puente A Mallorca', tempo: 96 },
+  { T: '07:59:33' },
+  { T: '08:00:61', song: 'Juntos', tempo: 135 },
+  { T: '09:14:63' },
+  { T: '09:32:25', song: 'Oh Oh July', tempo: 135 },
+  { T: '10:36:00' },
+  { T: '10:41:98', song: 'Un Rallo De Sol', tempo: 135 },
+  { T: '11:43:69' },
+  { T: '11:44:75', song: 'El Partido De Futbol', tempo: 130 },
+  { T: '12:51:76' },
+  { T: '12:52:72', song: '15 Años Tiene Mi Amor', tempo: 112 },
+  { T: '14:18:59' },
+  { T: '14:21:22', song: 'FINAL', tempo: 112 },
+];

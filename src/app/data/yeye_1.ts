@@ -1,0 +1,25 @@
+import { CUT } from './model';
+
+export const YEYE_1: CUT[] = [
+  { T: '00:00:00', song: 'Libre', tempo: 96 },
+  { T: '02:28:67' },
+  { T: '02:49:03', song: 'Chica Yeye', tempo: 96 },
+  { T: '03:47:76' },
+  { T: '03:58:62', song: 'Que Se Muere Los Feos', tempo: 80 },
+  { T: '04:56:72' },
+  { T: '04:58:63', song: 'Help Ayudame', tempo: 130 },
+  { T: '06:05:85' },
+  { T: '06:12:51', song: 'Eva Maria', tempo: 130 },
+  { T: '07:07:21' },
+  { T: '07:21:79', song: 'Corazon Contento', tempo: 130 },
+  { T: '08:20:48' },
+  { T: '08:34:73"', song: 'Mi Gran Noche', tempo: 135 },
+  { T: '10:05:35' },
+  { T: '10:22:74', song: 'Saca el Guisky Cheli', tempo: 135 },
+  { T: '11:36:08' },
+  { T: '11:52:58', song: 'Este Amor No Se Toca', tempo: 140 },
+  { T: '12:47:64' },
+  { T: '13:14:84', song: 'Black Is Black', tempo: 130 },
+  { T: '14:54:64' },
+  { T: '14:58:55', song: 'FINAL', tempo: 130 },
+];

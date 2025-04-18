@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
-import { b1 } from './data/disco_b1';
-import { b2 } from './data/disco_b2';
-import { b3 } from './data/disco_b3';
+import { DISCO_1 } from './data/disco_1';
+import { DISCO_2 } from './data/disco_2';
+import { DISCO_3 } from './data/disco_3';
 import { CUT } from './data/model';
-import { y1 } from './data/yeye_b1';
-import { y2 } from './data/yeye_b2';
-import { y3 } from './data/yeye_b3';
+import { YEYE_1 } from './data/yeye_1';
+import { YEYE_2 } from './data/yeye_2';
+import { YEYE_3 } from './data/yeye_3';
 
 @Component({
   selector: 'app-root',
@@ -35,12 +35,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.block1 = this.createBlock(b1);
-    this.block2 = this.createBlock(b2);
-    this.block3 = this.createBlock(b3);
-    this.yeye1 = this.createBlock(y1);
-    this.yeye2 = this.createBlock(y2);
-    this.yeye3 = this.createBlock(y3);
+    this.block1 = this.createBlock(DISCO_1);
+    this.block2 = this.createBlock(DISCO_2);
+    this.block3 = this.createBlock(DISCO_3);
+    this.yeye1 = this.createBlock(YEYE_1);
+    this.yeye2 = this.createBlock(YEYE_2);
+    this.yeye3 = this.createBlock(YEYE_3);
+
     this.blocks = [
       this.block1,
       this.block2,

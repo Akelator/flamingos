@@ -1,5 +1,6 @@
 <ng-container *ngIf="selected >= 0 && !!blocks?.length">
-  <div class="menu">
+
+  <div class="menu first">
     <div class="menu-btn"
          [class.selected]="selected == 0"
          (click)="select(0)">DISCO 1</div>
@@ -19,6 +20,27 @@
          [class.selected]="selected == 5"
          (click)="select(5)">YEYE 3</div>
   </div>
+  <!-- <div class="menu second">
+    <div class="menu-btn"
+         [class.selected]="selected == 6"
+         (click)="select(6)">SHORT</div>
+    <div class="menu-btn"
+         [class.selected]="selected == 7"
+         (click)="select(7)">SHORT</div>
+    <div class="menu-btn"
+         [class.selected]="selected == 8"
+         (click)="select(8)">SHORT</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 9"
+         (click)="select(9)">SHORT</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 10"
+         (click)="select(10)">SHORT</div>
+    <div class="menu-btn yy"
+         [class.selected]="selected == 11"
+         (click)="select(11)">SHORT</div>
+  </div> -->
+
   <div class="cut head">
     <div class="no-l"></div>
     <div class="info">SONG</div>
